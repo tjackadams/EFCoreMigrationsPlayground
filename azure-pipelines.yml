@@ -53,3 +53,10 @@ steps:
     command: 'custom'
     custom: 'ef'
     arguments: 'migrations script -p $(build.sourcesdirectory)/src/Playground.Migrations -s $(build.sourcesdirectory)/src/Playground.Web -o $(build.artifactsstagingdirectory)\migrations\migration.sql -i'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'publish migration scripts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/migrations'
+    ArtifactName: 'migrations'
+    publishLocation: 'Container'
