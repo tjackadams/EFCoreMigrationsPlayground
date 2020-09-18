@@ -24,7 +24,7 @@ steps:
   inputs:
     command: 'custom'
     custom: 'tool'
-    arguments: 'install --global dotnet-ef'
+    arguments: 'install --global dotnet-ef --version 5.0.0-rc.1.20451.13'
 
 - task: DotNetCoreCLI@2
   displayName: verify dotnet-ef version
