@@ -32,3 +32,10 @@ steps:
     command: 'build'
     projects: '**/**.csproj'
     arguments: '--no-restore'
+    
+- task: DotNetCoreCLI@2
+  displayName: 'generate migration scripts'
+  inputs:
+    command: 'custom'
+    custom: 'ef'
+    arguments: 'migrations script -p $(build.sourcesdirectory)\src\Playground.Web\Playground.WEb.csproj -o $(build.artifactsstagingdirectory\migrations\migration.sql -i'
