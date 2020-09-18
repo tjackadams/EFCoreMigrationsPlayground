@@ -20,6 +20,20 @@ steps:
     includePreviewVersions: true
     
 - task: DotNetCoreCLI@2
+  displayName: install dotnet-ef
+  inputs:
+    command: 'custom'
+    custom: 'tool'
+    arguments: 'install --global dotnet-ef'
+
+- task: DotNetCoreCLI@2
+  displayName: verify dotnet-ef version
+  inputs:
+    command: 'custom'
+    custom: 'ef'
+    arguments: '--version'
+    
+- task: DotNetCoreCLI@2
   displayName: 'restore'
   inputs:
     command: 'restore'
