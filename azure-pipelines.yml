@@ -25,6 +25,7 @@ steps:
     command: 'restore'
     projects: '**/**.csproj'
     feedsToUse: 'select'
+    verbosityRestore: Normal
 - task: DotNetCoreCLI@2
   displayName: 'build'
   inputs:
