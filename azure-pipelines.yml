@@ -52,4 +52,4 @@ steps:
   inputs:
     command: 'custom'
     custom: 'ef'
-    arguments: 'migrations script -p $(build.sourcesdirectory)\src\Playground.Web\Playground.Web.csproj -o $(build.artifactsstagingdirectory)\migrations\migration.sql -i'
+    arguments: 'migrations script -p $(build.sourcesdirectory)\src\Playground.Migrations\Playground.Migrations.csproj -s $(build.sourcesdirectory)\src\Playground.Web\Playground.Web.csproj -o $(build.artifactsstagingdirectory)\migrations\migration.sql -i'
